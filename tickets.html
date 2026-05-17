@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets - FIFA World Cup 2026</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:wght@900&display=swap" rel="stylesheet">
+</head>
+<body class="body-tickets">
+
+    <header class="hero-section">
+        <h1>FASES FINALES DEL MUNDIAL</h1>
+        <p class="hero-datos">Estadios Sedes | México, Canadá y EE. UU. 2026</p>
+        <div id="contador" class="contador-urgencia">La preventa termina en: 15:00</div>
+    </header>
+
+    <main class="contenedor-principal">
+        <div class="seccion-compra">
+            <h2 class="titulo-seccion">1. SELECCIONA LA FASE DEL PARTIDO</h2>
+            <div id="lista-entradas" class="grid-entradas"></div>
+            
+            <h2 class="titulo-seccion" style="margin-top: 40px;">2. MAPA DE ASIENTOS VIP (Opcional)</h2>
+            <div id="mapa-asientos" class="grid-asientos"></div>
+        </div>
+
+        <aside class="seccion-resumen">
+            <div class="carrito-card">
+                <h2>RESUMEN</h2>
+                
+                <div class="input-carrito-grupo">
+                    <label for="ci-cliente">C.I:</label>
+                    <input type="text" id="ci-cliente" placeholder="Mínimo 8 dígitos numéricos">
+                </div>
+                <div class="input-carrito-grupo">
+                    <label for="tarjeta-cliente">NÚMERO DE TARJETA:</label>
+                    <input type="text" id="tarjeta-cliente" placeholder="Mínimo 8 dígitos numéricos">
+                </div>
+                
+                <div id="estado-vacio" class="mensaje-vacio" style="margin-top: 15px;">No has seleccionado ninguna entrada aún.</div>
+                
+                <ul id="lista-carrito" class="lista-carrito"></ul>
+                
+                <div class="codigo-descuento">
+                    <input type="text" id="input-descuento" placeholder="CÓDIGO (Ej: ESTUDIANTE15)">
+                    <button type="button" class="btn-secundario" onclick="aplicarDescuento()">APLICAR</button>
+                </div>
+
+                <div class="totales">
+                    <p>Subtotal: $<span id="subtotal">0</span></p>
+                    <p id="texto-descuento" style="color: var(--accent-neon); display: none;">Descuento: -$<span id="valor-descuento">0</span></p>
+                    <h3>TOTAL: $<span id="total">0</span></h3>
+                </div>
+
+                <button type="button" class="btn-principal" onclick="simularCompra()">SIMULAR COMPRA</button>
+            </div>
+        </aside>
+    </main>
+
+    <section class="world-cup-info">
+        <h2>LEYENDA SOBRE EL MUNDIAL 2026</h2>
+        <p>La Copa Mundial de la FIFA 2026 será la edición más grande e innovadora de la historia del fútbol. Por primera vez, 48 selecciones nacionales se disputarán el trofeo definitivo a lo largo de tres países anfitriones. Las etapas eliminatorias de Cuartos de Final, Semifinales y la Gran Final prometen paralizar el planeta en un despliegue de talento y pasión sin precedentes.</p>
+    </section>
+
+    <div class="contenedor-boton-volver">
+        <button type="button" class="btn-volver-inicio" onclick="window.location.href='index.html'">← VOLVER A LA PÁGINA DE ACCESO</button>
+    </div>
+
+    <div id="custom-alert" class="modal-alerta" style="display: none;">
+        <div class="modal-alerta-contenido" id="modal-contenedor">
+            <h2 id="alert-title" style="font-family: 'Permanent Marker', cursive; margin-bottom: 15px;">ALERTA</h2>
+            <p id="alert-message">Mensaje informativo</p>
+            <button type="button" onclick="cerrarAlerta()">ENTENDIDO</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

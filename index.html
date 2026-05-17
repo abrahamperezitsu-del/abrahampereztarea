@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA World Cup 2026 - Acceso</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:wght@900&display=swap" rel="stylesheet">
+</head>
+<body class="body-login">
+
+    <div class="login-card">
+        <h2>INICIAR SESIÓN</h2>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="usuario" placeholder="USUARIO / EMAIL" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="CONTRASEÑA" required>
+            </div>
+            <button type="button" class="btn-principal" onclick="validarAcceso()">ENTRAR</button>
+        </form>    
+
+        <div class="decoration"></div>
+    </div>
+
+    <div id="custom-alert" class="modal-alerta" style="display: none;">
+        <div class="modal-alerta-contenido" id="modal-contenedor">
+            <h2 id="alert-title" style="font-family: 'Permanent Marker', cursive; margin-bottom: 15px;">ALERTA</h2>
+            <p id="alert-message">Mensaje de error</p>
+            <button type="button" onclick="cerrarAlerta()">ENTENDIDO</button>
+        </div>
+    </div>
+
+    <script>
+        function lanzarAlertaPersonalizada(mensaje, esExito = false) {
+            const contenedor = document.getElementById('modal-contenedor');
+            const titulo = document.getElementById('alert-title');
+            
+            if (esExito) {
+                contenedor.style.borderColor = "var(--accent-neon)";
+                contenedor.style.boxShadow = "12px 12px 0px var(--accent-pink)";
+                titulo.innerText = "¡ACCESO CONFERIDO!";
+                titulo.style.color = "var(--accent-neon)";
+            } else {
+                contenedor.style.borderColor = "var(--accent-pink)";
+                contenedor.style.boxShadow = "12px 12px 0px var(--accent-neon)";
+                titulo.innerText = "ERROR DE VALIDACIÓN";
+                titulo.style.color = "var(--accent-pink)";
+            }
+            
+            document.getElementById('alert-message').innerText = mensaje;
+            document.getElementById('custom-alert').style.display = 'flex';
+        }
+
+        function cerrarAlerta() {
+            document.getElementById('custom-alert').style.display = 'none';
+        }
+
+        function validarAcceso() {
+            const usuario = document.getElementById('usuario').value;
+            const pass = document.getElementById('password').value;
+
+            if (usuario.trim() === "" || pass.trim() === "") {
+                lanzarAlertaPersonalizada("¡REQUISITO FALTANTE! Por favor, rellena ambos campos para continuar.");
+            } else {
+                window.location.href = 'tickets.html';
+            }
+        }
+    </script>
+</body>
+</html>

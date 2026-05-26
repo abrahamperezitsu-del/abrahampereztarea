@@ -108,3 +108,162 @@ input { width: 100%; padding: 15px; background: #1a1a1a; border: 2px solid #333;
     to { transform: scale(1) rotate(-1deg); opacity: 1; }
 }
 @media (max-width: 800px) { .balon-mundial, .foto-posicionada { display: none; } }
+
+/* === PERFIL DEL DESARROLLADOR === */
+.dev-perfil-contenedor {
+    position: fixed;
+    bottom: -60px; /* Oculto por debajo de la pantalla inicialmente */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: #1e1e24;
+    color: #ffffff;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif; /* Tu fuente ya debería estar cargada o puedes usar sans-serif */
+    z-index: 9999;
+    transition: bottom 0.4s ease, opacity 0.4s ease, max-height 0.4s ease-in-out;
+    max-height: 45px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dev-perfil-contenedor.visible {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dev-perfil-contenedor.abierto {
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.dev-perfil-pestaña {
+    background: #2d2d35;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #4a4a5a;
+    user-select: none;
+}
+
+.dev-perfil-pestaña:hover {
+    background: #3a3a45;
+}
+
+.dev-perfil-contenido {
+    padding: 25px;
+}
+
+.dev-perfil-cabecera {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dev-perfil-foto-espacio {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #666;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    padding: 5px;
+    background: #151518;
+    flex-shrink: 0;
+}
+
+.dev-perfil-datos h3 {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.dev-perfil-datos p {
+    margin: 0;
+    color: var(--accent-neon); /* Reutilizando tu variable de color */
+    font-weight: bold;
+}
+
+.dev-perfil-seccion {
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.dev-perfil-seccion h4 {
+    margin: 0 0 10px 0;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.dev-perfil-lista {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.dev-perfil-proyecto {
+    background: #25252b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.dev-perfil-proyecto h5 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.dev-perfil-proyecto p {
+    margin: 0;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.dev-btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+.dev-btn-whatsapp:hover {
+    background-color: #20ba5a;
+}
+
+.dev-perfil-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    border-top: 1px solid #25252b;
+    padding-top: 10px;
+}

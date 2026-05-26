@@ -74,6 +74,77 @@
         </div>
     </div>
 
+    <div id="perfilDev" class="dev-perfil-contenedor">
+        <div class="dev-perfil-pestaña" onclick="togglePerfil()">
+            <span>💻 Ver Perfil del Desarrollador</span>
+        </div>
+        
+        <div class="dev-perfil-contenido">
+            <div class="dev-perfil-cabecera">
+                <div class="dev-perfil-foto-espacio">
+                    [ Foto Aquí ]
+                </div>
+                <div class="dev-perfil-datos">
+                    <h3>Abraham Gabriel Perez Ascanio</h3>
+                    <p>🚀 Semi-casi-programador</p>
+                </div>
+            </div>
+
+            <div class="dev-perfil-seccion">
+                <h4>🛠️ Habilidades</h4>
+                <ul class="dev-perfil-lista">
+                    <li><strong>Lenguajes:</strong> Python (OOP, RegEx)</li>
+                    <li><strong>Bases de Datos:</strong> SQL / PostgreSQL</li>
+                    <li><strong>Herramientas:</strong> Git & GitHub</li>
+                    <li><strong>Competencias:</strong> Lógica algorítmica y resolución de problemas</li>
+                </ul>
+            </div>
+
+            <div class="dev-perfil-seccion">
+                <h4>📂 Proyectos</h4>
+                <div class="dev-perfil-proyecto">
+                    <h5>📋 Organizador de Turnos Rotativos</h5>
+                    <p>Sistema algorítmico desarrollado en Python para optimizar la asignación de horarios de personal bajo restricciones de tiempo específicas.</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/584129209843?text=Hola%20Abraham,%20vi%20tu%20perfil%20en%20la%20web%20del%20Mundial!" 
+               target="_blank" 
+               class="dev-btn-whatsapp">
+                📲 Contactar por WhatsApp (04129209843)
+            </a>
+
+            <div class="dev-perfil-footer">
+                © 2026 • Diseñado por Abraham Pérez • Caracas, Venezuela
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Controlar la apertura manual al hacer clic
+        function togglePerfil() {
+            const perfil = document.getElementById('perfilDev');
+            perfil.classList.toggle('abierto');
+        }
+
+        // 2. Controlar la aparición automática solo al llegar abajo
+        window.addEventListener('scroll', () => {
+            const perfil = document.getElementById('perfilDev');
+            
+            // Detecta si el usuario está a menos de 80px del fondo real de la página
+            const cercaDelFondo = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 80);
+            
+            if (cercaDelFondo) {
+                perfil.classList.add('visible');
+            } else {
+                // Solo se vuelve a ocultar si el usuario sube Y la pestaña NO está expandida/abierta
+                if (!perfil.classList.contains('abierto')) {
+                    perfil.classList.remove('visible');
+                }
+            }
+        });
+    </script>
+
     <script src="app.js"></script>
 </body>
 </html>

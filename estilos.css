@@ -267,3 +267,24 @@ input { width: 100%; padding: 15px; background: #1a1a1a; border: 2px solid #333;
     border-top: 1px solid #25252b;
     padding-top: 10px;
 }
+/* --- Estilos para el enlace de la landing --- */
+.contenedor-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-landing {
+    color: #ffffff; /* Color blanco neutro */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85rem; /* Tamaño discreto, no compite con el botón */
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.link-landing:hover {
+    opacity: 1;
+    color: var(--accent-neon, #00f3ff); /* Usa tu variable neón si la tienes, o este cian por defecto */
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--accent-neon, #00f3ff);
+}

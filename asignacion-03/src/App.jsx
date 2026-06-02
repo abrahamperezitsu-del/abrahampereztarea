@@ -42,9 +42,11 @@ function App() {
         <section id="hero" className="hero">
           <div className="hero-content">
             <h2 className="graffiti-text">¡VIVE LA PASIÓN!</h2>
-            <p>Olvídate de las filas para la compra presencial. Regístrate, elige tu compra y asegura tu lugar en la historia con un solo clic.</p>
-            <button className="cta-button">Regístrate y Compra</button>
-          </div>
+              <p>Olvídate de las filas para la compra presencial. Regístrate, elige tu compra y asegura tu lugar en la historia con un solo clic.</p>
+              <button className="cta-button" onClick={() => window.location.href = '../'}>
+                Regístrate y Compra
+              </button>
+      </div>
         </section>
 
         {/* SECCIÓN 1: Ventajas (Uso de .map y Componente Reutilizable) */}

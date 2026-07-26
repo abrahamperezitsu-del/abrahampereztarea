@@ -1,0 +1,246 @@
+/* Variables Globales */
+:root {
+    --primario: #2c3e50;
+    --secundario: #7f8c8d;
+    --acento: #3498db;
+    --whatsapp: #25D366;
+    --github: #333333;
+    --fondo: #f4f7f6;
+    --blanco: #ffffff;
+    --texto: #333333;
+}
+
+/* Configuraciones Generales */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Cabecera y Perfil */
+.cabecera {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.foto-perfil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--acento);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    background-color: #e1e1e1; 
+}
+
+h1 {
+    margin: 0;
+    color: var(--primario);
+    font-size: 2.5em;
+}
+
+.profesion {
+    font-size: 1.2em;
+    color: var(--secundario);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Botones de Contacto */
+.contacto {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contacto a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: opacity 0.3s ease;
+}
+
+.contacto a:hover { opacity: 0.8; }
+.btn-whatsapp { background-color: var(--whatsapp); }
+.btn-github { background-color: var(--github); }
+
+/* Secciones Generales */
+.seccion {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--primario);
+    border-left: 5px solid var(--acento);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+/* Historia Personal */
+.historia-texto {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+
+/* Habilidades */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.habilidad-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--acento);
+}
+
+/* Elementos Desplegables (Acordeones) */
+details {
+    background: var(--blanco);
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+summary {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primario);
+    font-size: 1.1em;
+}
+
+summary:hover {
+    background: #f1f3f5;
+}
+
+summary::after {
+    content: '▼';
+    font-size: 0.8em;
+    color: var(--acento);
+    transition: transform 0.3s;
+}
+
+details[open] > summary::after {
+    transform: rotate(180deg);
+}
+
+/* Desplegable Maestro de Proyectos */
+details.seccion-proyectos {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 40px;
+    overflow: visible;
+}
+
+details.seccion-proyectos > summary {
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1.5em;
+    color: var(--primario);
+    border-left: 5px solid var(--acento);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+details.seccion-proyectos > summary:hover {
+    background: rgba(0,0,0,0.02);
+}
+
+.contenedor-internos {
+    padding-left: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+.contenido-proyecto {
+    padding: 20px;
+    border-top: 1px solid #e1e1e1;
+}
+
+/* Pestaña especial de GitHub */
+details.github-destacado {
+    border-color: var(--github);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 25px;
+}
+
+details.github-destacado summary {
+    background: var(--github);
+    color: var(--blanco);
+}
+
+details.github-destacado summary:hover {
+    background: #222;
+}
+
+details.github-destacado summary::after {
+    color: var(--blanco);
+}
+
+.link-proyecto {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--blanco);
+    background: var(--github);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.link-proyecto:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: var(--secundario);
+    font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .contenedor { padding: 20px; }
+    h1 { font-size: 2em; }
+}
